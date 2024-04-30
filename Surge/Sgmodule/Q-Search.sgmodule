@@ -2,14 +2,6 @@
 #!desc=【命令+空格+关键词】或者【关键词+空格+命令】
 
 [URL Rewrite]
-# bd xxx (百度)
-^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
-^https:\/\/duckduckgo.com\/\?q=((.(?!bd))+)\+bd.+ https://www.baidu.com/s?wd=$1 302
-# by xxx (必应)
-^https:\/\/duckduckgo.com\/\?q=by\+([^&]+).+ https://www.bing.com/search?q=$1 302
-^https:\/\/duckduckgo.com\/\?q=([^+]+)\+by.+ https://www.bing.com/search?q=$1 302
-# xxx （无指令默认为 Google）
-^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
 # gh xxx (GitHub)
 ^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ https://github.com/search?q=$1 302
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gh.+ https://github.com/search?q=$1 302
@@ -39,6 +31,14 @@
 ^https:\/\/duckduckgo.com\/\?q=sg&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143464&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=tr&urlDesc= 302
 # us (切换至美国区)
 ^https:\/\/duckduckgo.com\/\?q=us&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143441&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=us&urlDesc= 302
+# bd xxx (百度)
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302
+^https:\/\/duckduckgo.com\/\?q=((.(?!bd))+)\+bd.+ https://www.baidu.com/s?wd=$1 302
+# by xxx (必应)
+^https:\/\/duckduckgo.com\/\?q=by\+([^&]+).+ https://www.bing.com/search?q=$1 302
+^https:\/\/duckduckgo.com\/\?q=([^+]+)\+by.+ https://www.bing.com/search?q=$1 302
+# xxx （无指令默认为 Google）
+^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
 
 [MITM]
 hostname = %APPEND% duckduckgo.com
