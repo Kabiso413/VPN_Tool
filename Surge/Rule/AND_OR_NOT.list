@@ -1,5 +1,5 @@
 # 规则名称:逻辑规则
-# 规则统计:1
+# 规则统计:2
 
 AND,((PROTOCOL,UDP),(DEST-PORT,443))
 AND,((NOT,((GEOIP,CN))),(PROTOCOL,QUIC))
