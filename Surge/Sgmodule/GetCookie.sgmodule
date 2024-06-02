@@ -1,5 +1,5 @@
-#!name=Tartarus iOS Cookies Module
-#!desc=iOS Cookies 模块配置
+#!name=GetCookie
+#!desc=哔哩哔哩、喜马拉雅、百度贴吧Cookie获取合集
 
 [Script]
 http-request ^https?:\/\/tieba\.baidu\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js, tag=百度签到(网页)
