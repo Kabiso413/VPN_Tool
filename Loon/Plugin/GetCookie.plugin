@@ -1,5 +1,6 @@
-#!name=GetCookie
-#!desc=哔哩哔哩、喜马拉雅、百度贴吧Cookie获取合集
+#!name = GetCookie
+#!desc = 哔哩哔哩、喜马拉雅、百度贴吧Cookie获取合集
+#!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/direct(1).png
 
 [Script]
 http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js, tag=B站Cookie(APP)
