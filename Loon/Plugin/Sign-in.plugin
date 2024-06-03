@@ -1,5 +1,6 @@
 #!name = Sign-in
 #!desc = 哔哩哔哩、喜马拉雅、百度贴吧签到合集
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse_2.png
 
 [Script]
 cron "1 0 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, timeout=60, tag=B站每日等级任务
