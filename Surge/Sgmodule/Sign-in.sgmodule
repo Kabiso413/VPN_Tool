@@ -7,3 +7,5 @@ B站每日任务 = type=cron,cronexp=1 0 * * *,script-path=https://raw.githubuse
 喜马拉雅签到 = type=cron,cronexp=2 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js,wake-system=1,timeout=15
 
 百度贴吧签到 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js,type=cron,cronexp=3 0 * * *,script-update-interval=0
+
+金多多商城签到 = type=cron,cronexp="4 0 * * *",script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JinDD/JinDD.js,script-update-interval=0,timeout=3600,wake-system=1,engine=jsc
