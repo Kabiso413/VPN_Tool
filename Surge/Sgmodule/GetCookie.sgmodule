@@ -10,7 +10,5 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,scri
 
 http-request ^https?:\/\/tieba\.baidu\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js, tag=百度贴吧Cookie
 
-金多多商城cookie = type=http-response,pattern=^https:\/\/www\.jindd\.shop\/addons\/yun_shop\/api.php\?i=12&uuid=0&type=1&mid=(\d+)&version=v1.1.137&basic_info=1&route=member.member.wxJsSdkConfig,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JinDD/JinDD.js,requires-body=1,max-size=0
-
 [MITM]
-hostname = %APPEND% app.bilibili.com, m.bilibili.com, xmc.ximalaya.com, tieba.baidu.com, www.jindd.shop
+hostname = %APPEND% app.bilibili.com, m.bilibili.com, xmc.ximalaya.com, tieba.baidu.com
