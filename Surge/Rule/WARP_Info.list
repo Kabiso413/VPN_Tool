@@ -1,6 +1,0 @@
-# 规则名称:WARP Info
-# 规则统计:3
-
-DOMAIN-SUFFIX,api.cloudflareclient.com
-IP-CIDR,162.159.36.1/32
-IP-CIDR6,2606:4700:4700::1111/128
