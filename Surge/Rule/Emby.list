@@ -1,10 +1,9 @@
 # 规则名称:Emby
-# 规则统计:4
+# 规则统计:3
 
 # EmbyPlus纸片人
-DOMAIN,embyplus.org
-DOMAIN,emby.embyplus.org
+DOMAIN-SUFFIX,embyplus.org
 
 # ACA机场服
 DOMAIN,emby.aca.best
-DOMAIN,stream4.misakaf.org
+DOMAIN-SUFFIX,misakaf.org
