@@ -1,9 +1,9 @@
-#!name=毒奶特供
-#!desc=毒奶去网页广告
-#!author=limbopro[https://github.com/limbopro]
-#!icon=https://raw.h.com/Kabiso413/VPN_Tool/main/Surge/Icon/Limbo.png
-#!tag=广告过滤
-#!date=2025-04-21
+#!name = 毒奶特供
+#!desc = 毒奶去网页广告计划
+#!author = limbopro[https://github.com/limbopro]
+#!icon = https://raw.h.com/Kabiso413/VPN_Tool/main/Surge/Icon/Limbo.png
+#!tag = 广告过滤
+#!date = 2025-04-21
 
 [Rewrite]
 ^https?:\/\/www\.novel543\.com\/log\/ad\.html - reject
