@@ -1,0 +1,150 @@
+{
+    "name": "My Icons",
+    "description": "Kabiso413",
+    "icons": [
+        {
+            "name": "CN",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CN.png"
+        },
+        {
+            "name": "CN-Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CN-Static.png"
+        },
+        {
+            "name": "CN-Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CN-Urltest.png"
+        },
+        {
+            "name": "CN-Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CN-Roundrobin.png"
+        },
+        {
+            "name": "CN-Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CN-Available.png"
+        },
+        {
+            "name": "CN-SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CN-SSID.png"
+        },
+        {
+            "name": "HK",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HK.png"
+        },
+        {
+            "name": "HK-Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HK-Static.png"
+        },
+        {
+            "name": "HK-Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HK-Urltest.png"
+        },
+        {
+            "name": "HK-Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HK-Roundrobin.png"
+        },
+        {
+            "name": "HK-Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HK-Available.png"
+        },
+        {
+            "name": "HK-SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HK-SSID.png"
+        },
+        {
+            "name": "JP",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/JP.png"
+        },
+        {
+            "name": "JP-Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/JP-Static.png"
+        },
+        {
+            "name": "JP-Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/JP-Urltest.png"
+        },
+        {
+            "name": "JP-Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/JP-Roundrobin.png"
+        },
+        {
+            "name": "JP-Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/JP-Available.png"
+        },
+        {
+            "name": "JP-SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/JP-SSID.png"
+        },
+        {
+            "name": "KR",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/KR.png"
+        },
+        {
+            "name": "KR-Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/KR-Static.png"
+        },
+        {
+            "name": "KR-Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/KR-Urltest.png"
+        },
+        {
+            "name": "KR-Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/KR-Roundrobin.png"
+        },
+        {
+            "name": "KR-Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/KR-Available.png"
+        },
+        {
+            "name": "KR-SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/KR-SSID.png"
+        },
+        {
+            "name": "SG",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SG.png"
+        },
+        {
+            "name": "SG-Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SG-Static.png"
+        },
+        {
+            "name": "SG-Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SG-Urltest.png"
+        },
+        {
+            "name": "SG-Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SG-Roundrobin.png"
+        },
+        {
+            "name": "SG-Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SG-Available.png"
+        },
+        {
+            "name": "SG-SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SG-SSID.png"
+        },
+        {
+            "name": "US",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US.png"
+        },
+        {
+            "name": "US-Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-Static.png"
+        },
+        {
+            "name": "US-Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-Urltest.png"
+        },
+        {
+            "name": "US-Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-Roundrobin.png"
+        },
+        {
+            "name": "US-Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-Available.png"
+        },
+        {
+            "name": "US-SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-SSID.png"
+        }
+    ]
+}
