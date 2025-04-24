@@ -147,6 +147,26 @@
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-SSID.png"
         },
         {
+            "name": "Static",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Static.png"
+        },
+        {
+            "name": "Urltest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Urltest.png"
+        },
+        {
+            "name": "Roundrobin",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Roundrobin.png"
+        },
+        {
+            "name": "Available",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Available.png"
+        },
+        {
+            "name": "SSID",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/SSID.png"
+        },
+        {
             "name": "Global",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Global.png"
         },
@@ -169,6 +189,42 @@
         {
             "name": "Limbo",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Limbo.png"
+        },
+        {
+            "name": "AdblockPlus",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/AdblockPlus.png"
+        },
+        {
+            "name": "GlaDos",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/GlaDos.png"
+        },
+        {
+            "name": "Stack",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Stack.png"
+        },
+        {
+            "name": "Spotify",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Spotify.png"
+        },
+        {
+            "name": "TikTok",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/TikTok.png"
+        },
+        {
+            "name": "Netflix",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Netflix.png"
+        },
+        {
+            "name": "Disney",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Disney.png"
+        },
+        {
+            "name": "OpenAI",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/OpenAI.png"
+        },
+        {
+            "name": "Speedtest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Speedtest.png"
         }
     ]
 }
