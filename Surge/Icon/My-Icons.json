@@ -145,6 +145,30 @@
         {
             "name": "US-SSID",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/US-SSID.png"
+        },
+        {
+            "name": "Global",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Global.png"
+        },
+        {
+            "name": "Low",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Low.png"
+        },
+        {
+            "name": "Cloudflare",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Cloudflare.png"
+        },
+        {
+            "name": "Direct",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Direct.png"
+        },
+        {
+            "name": "Final",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Final.png"
+        },
+        {
+            "name": "Limbo",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Limbo.png"
         }
     ]
 }
