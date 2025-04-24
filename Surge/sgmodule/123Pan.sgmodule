@@ -1,7 +1,7 @@
-#!name=123云盘去广告
-#!desc=过滤123云盘应用端及网页端广告，解除网页端流量1G下载限制（请单文件下载，不要文件夹或多文件下载）。
-#!category=广告过滤
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], ddgksf2013[https://github.com/ddgksf2013]
+#!name = 123云盘去广告
+#!desc = 过滤123云盘应用端及网页端广告，解除网页端流量1G下载限制（请单文件下载，不要文件夹或多文件下载）。
+#!category = 广告过滤
+#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], ddgksf2013[https://github.com/ddgksf2013]
 
 
 [Rule]
