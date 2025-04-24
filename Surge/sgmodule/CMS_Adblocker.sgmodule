@@ -1,7 +1,7 @@
-#!name=CMS Adblocker
-#!desc=过滤CMS资源插入式广告
-#!category=广告过滤
-#!author=Yswag[https://github.com/Yswag]
+#!name = CMS Adblocker
+#!desc = 过滤CMS资源插入式广告
+#!category = 广告过滤
+#!author = Yswag[https://github.com/Yswag]
 
 
 [URL Rewrite]
