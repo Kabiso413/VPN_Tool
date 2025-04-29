@@ -7,10 +7,10 @@
 
 [Rule]
 # 直连规则
-DOMAIN-SUFFIX,smart.media.cloudaria.net,直连模式策略
+DOMAIN-SUFFIX,smart.media.cloudaria.net,DIRECT
 
 # 代理规则
-DOMAIN-SUFFIX,anycast.media.cloudaria.net,超低倍率策略
+DOMAIN-SUFFIX,anycast.media.cloudaria.net,超低倍率
 
 [Script]
 EMBY = type=http-response, pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, requires-body=true, max-size=0
