@@ -183,6 +183,10 @@
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Direct.png"
         },
         {
+            "name": "Speedtest",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Speedtest.png"
+        },
+        {
             "name": "Final",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Final.png"
         },
@@ -223,8 +227,8 @@
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/OpenAI.png"
         },
         {
-            "name": "Speedtest",
-            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Speedtest.png"
+            "name": "123Pan",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/123Pan.png"
         },
         {
             "name": "HaloCloud",
