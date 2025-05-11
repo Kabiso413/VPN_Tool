@@ -225,6 +225,10 @@
         {
             "name": "Speedtest",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Speedtest.png"
+        },
+        {
+            "name": "Halo",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Halo.png"
         }
     ]
 }
