@@ -179,10 +179,6 @@
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Cloudflare.png"
         },
         {
-            "name": "Direct",
-            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Direct.png"
-        },
-        {
             "name": "Speedtest",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Speedtest.png"
         },
@@ -197,6 +193,14 @@
         {
             "name": "AdblockPlus",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/AdblockPlus.png"
+        },
+        {
+            "name": "Advertising",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Advertising.png"
+        },
+        {
+            "name": "18Plus",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/18Plus.png"
         },
         {
             "name": "GlaDos",
@@ -233,6 +237,14 @@
         {
             "name": "HaloCloud",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/HaloCloud.png"
+        },
+        {
+            "name": "Quantumult-X",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Quantumult-X.png"
+        },
+        {
+            "name": "Surge",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/Surge.png"
         }
     ]
 }
