@@ -61,5 +61,10 @@ IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 ^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ reject-img
 ^https?://live-ads\.huya\.com/live/getAllEntrance.*$ reject-dict
 
+# ------------------------------------
+# 天翼云盘（fmz200）
+# hostname = api.cloud.189.cn
+^https?:\/\/api\.cloud\.189\.cn\/guns\/(img\/recommendedPosition|getOpenscreenBanners) reject-dict
+
 [MITM]
-hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
+hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com, api.cloud.189.cn
