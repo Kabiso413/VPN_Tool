@@ -7,7 +7,7 @@
 
 [Rule]
 # ------------------------------------
-# 腾讯视频
+# 腾讯视频（广告必须死）
 DOMAIN,pgdt.gtimg.cn,REJECT
 DOMAIN,ugchsy.gtimg.com,REJECT
 DOMAIN,adsmind.gdtimg.com,REJECT
@@ -37,4 +37,29 @@ DOMAIN,rdelivery.qq.com,REJECT
 DOMAIN,wallpaper-1258344696.file.myqcloud.com,REJECT
 DOMAIN,wallpaper-test-1258344696.file.myqcloud.com,REJECT
 IP-CIDR,183.201.213.194/24,REJECT,no-resolve
+
+[Rewrite]
 # ------------------------------------
+# 斗鱼直播（fmz200）
+# hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
+^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd reject
+^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo reject-dict
+^https?:\/\/staticlive\.douyucdn\.cn\/upload\/signs\/ reject
+^https?:\/\/staticlive\.douyucdn\.cn\/.+\/getStartSend reject
+^https?:\/\/staticlive\.douyucdn\.cn\/.+?\/getStartSend reject-img
+^https?:\/\/capi\.douyucdn\.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios reject
+^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update reject-img
+^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios reject-img
+^https?:\/\/douyucdn\.cn\/.+\/appapi\/getinfo reject
+^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo reject-img
+
+# ------------------------------------
+# 虎牙直播（fmz200）
+# hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
+^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$ reject
+^https?:\/\/business\.msstatic\.com\/advertiser\/material reject
+^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ reject-img
+^https?://live-ads\.huya\.com/live/getAllEntrance.*$ reject-dict
+
+[MITM]
+hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
