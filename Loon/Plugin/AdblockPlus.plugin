@@ -1,5 +1,5 @@
 #!name = AdblockPlus
-#!desc = 自用去广告合集
+#!desc = 自用去广告合集，某些APP要清除缓存或者重新安装拦截广告才会生效！
 #!author = fmz200[https://github.com/fmz200], 广告必须死[https://t.me/Aa28413761]
 #!icon = https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/AdblockPlus.png
 #!tag = 广告过滤
