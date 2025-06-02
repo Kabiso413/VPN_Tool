@@ -1,9 +1,9 @@
 #!name = AdblockPlus
-#!desc = 自用去广告合集，某些APP要清除缓存或者重新安装拦截广告才会生效！
+#!desc = 某些APP要清除缓存或者重新安装拦截广告才会生效！
 #!author = fmz200[https://github.com/fmz200], 广告必须死[https://t.me/Aa28413761]
 #!icon = https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/AdblockPlus.png
 #!tag = 广告过滤
-#!date = 2025-05-30
+#!date = 2025-06-03
 
 [Argument]
 dshxfg_enable = switch,true,false,tag=动画疯
@@ -11,40 +11,68 @@ ximalaya_enable = switch,true,false,tag=喜马拉雅
 
 [Rule]
 # ------------------------------------
-# 腾讯视频（广告必须死）
-DOMAIN,pgdt.gtimg.cn,REJECT
-DOMAIN,ugchsy.gtimg.com,REJECT
-DOMAIN,adsmind.gdtimg.com,REJECT
-DOMAIN,btrace.video.qq.com,REJECT
-DOMAIN,info4.video.qq.com,REJECT
-DOMAIN,info6.video.qq.com,REJECT
-DOMAIN-SUFFIX,api.poll.video.qq.com,REJECT
-DOMAIN,activity.video.qq.com,REJECT
-DOMAIN,ios.video.mpush.qq.com,REJECT
-DOMAIN,p.l.qq.com,REJECT
-DOMAIN,rpt.gdt.qq.com,REJECT
-DOMAIN-SUFFIX,trace.qq.com,REJECT
-DOMAIN-SUFFIX,tetrack.qq.com,REJECT
-DOMAIN-SUFFIX,tpns.tencent.com,REJECT
-DOMAIN-SUFFIX,stat.tpns.tencent.com,REJECT
-DOMAIN-SUFFIX,static-res.qq.com,REJECT
-DOMAIN-SUFFIX,omgmta.qq.com,REJECT
-DOMAIN-SUFFIX,omgmta1.qq.com,REJECT
-DOMAIN,tux.qq.com,REJECT
-DOMAIN,iacc.qq.com,REJECT
-DOMAIN,p2.l.qq.com,REJECT
-DOMAIN,v3.gdt.qq.com,REJECT
-DOMAIN,rmonitor.qq.com,REJECT
-DOMAIN,xs.gdt.qq.com,REJECT
-DOMAIN,aegis.qq.com,REJECT
-DOMAIN,rdelivery.qq.com,REJECT
-DOMAIN,wallpaper-1258344696.file.myqcloud.com,REJECT
-DOMAIN,wallpaper-test-1258344696.file.myqcloud.com,REJECT
-IP-CIDR,183.201.213.194/24,REJECT,no-resolve
+# 虎牙直播(fmz200)
+DOMAIN, pp-cdnfile2pcdn.msstatic.com, REJECT
+DOMAIN, livewebbs2pcdn.msstatic.com, REJECT
+DOMAIN, huyafile.msstatic.com, REJECT
+DOMAIN, livewebbs2.msstatic.com, REJECT
+DOMAIN, business.msstatic.com, REJECT
+DOMAIN-SUFFIX, v1d.szbdyd.com, REJECT
+
+# ------------------------------------
+# 喜马拉雅(fmz200)
+DOMAIN, adbehavior.ximalaya.com, REJECT
+DOMAIN, adwbs.ximalaya.com, REJECT
+DOMAIN-SUFFIX, ad.test.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adse.test.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adweb.test.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adweb.ximalaya.com, REJECT
+DOMAIN-SUFFIX, linkeye.ximalaya.com, REJECT
+DOMAIN-SUFFIX, location.ximalaya.com, REJECT
+DOMAIN-SUFFIX, xdcs-collector.ximalaya.com, REJECT
+DOMAIN-SUFFIX, ad.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adse.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adse.wsa.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adbehavior.wsa.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adsebs.ximalaya.com, REJECT
+DOMAIN-SUFFIX, adbs.ximalaya.com, REJECT
+
+# ------------------------------------
+# 中国移动(fmz200)
+IP-CIDR, 120.240.95.37/32, REJECT, no-resolve
+
+# ------------------------------------
+# 中国电信(fmz200)
+DOMAIN, ad.21cn.com, REJECT
+DOMAIN, ad.k.21cn.com, REJECT
+DOMAIN, admarket.21cn.com, REJECT
+DOMAIN, adshows.21cn.com, REJECT
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
+
+# ------------------------------------
+# 工商银行(广告必须死)
+DOMAIN, pageviewp.icbc.com.cn, REJECT
+DOMAIN-SUFFIX, mall.icbc.com.cn, REJECT
+
+# ------------------------------------
+# 蓝奏云(广告必须死)
+DOMAIN, statics.woozooo.com, REJECT
+
+# ------------------------------------
+# Speedtest(广告必须死)
+DOMAIN, ads.pubmatic.com, REJECT
+DOMAIN, id.hadron.ad.gt, REJECT
+DOMAIN-KEYWORD, -adsystem.com, REJECT
 
 [Rewrite]
 # ------------------------------------
-# 斗鱼直播（fmz200）
+# 动画疯(fmz200)
+# hostname = api.gamer.com.tw
+^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/anime_get_question\.php reject-dict
+
+# ------------------------------------
+# 斗鱼直播(fmz200)
 # hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
 ^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd reject
 ^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo reject-dict
@@ -58,7 +86,7 @@ IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 ^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo reject-img
 
 # ------------------------------------
-# 虎牙直播（fmz200）
+# 虎牙直播(fmz200)
 # hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
 ^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$ reject
 ^https?:\/\/business\.msstatic\.com\/advertiser\/material reject
@@ -66,7 +94,7 @@ IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 ^https?://live-ads\.huya\.com/live/getAllEntrance.*$ reject-dict
 
 # ------------------------------------
-# 喜马拉雅（fmz200）
+# 喜马拉雅(fmz200)
 # hostname = *.xima*.*.com, *.xmcdn.*
 # 修复轮播Ad失效Bug
 ^https?:\/\/.*\.xima.*\.com\/discovery-feed\/focus\/queryF reject
@@ -108,7 +136,7 @@ IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 ^https?:\/\/.*\.xima.*\.com\/ting\/(loading|feed|home)? reject
 
 # ------------------------------------
-# 中国移动（fmz200）
+# 中国移动(fmz200)
 # hostname = client.app.coc.10086.cn, app.10086.cn
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit reject-200
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList reject
@@ -116,7 +144,7 @@ IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 ^https?:\/\/(client\.app\.coc|app)\.10086\.cn\/biz-orange\/DN\/emotionMarket reject
 
 # ------------------------------------
-# 中国移动云盘（fmz200）
+# 中国移动云盘(fmz200)
 # hostname = mcmm.caiyun.feixin.10086.cn, mrp.mcloud.139.com, ad.mcloud.139.com, middle.yun.139.com
 ^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/IAdvert reject-200
 ^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/v\d\/getAdverts reject-200
@@ -125,24 +153,28 @@ IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 ^https?:\/\/mrp\.mcloud\.139\.com\/mc\/mc-client-service\/openapi\/letter\/query reject-dict
 
 # ------------------------------------
-# 中国电信（fmz200）
+# 中国电信(fmz200)
 # hostname = cloud.189.cn, zt-app.go189.cn
 ^https?:\/\/cloud\.189\.cn\/include\/splash\/ reject
 ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*?Animation reject-img
 
 # ------------------------------------
-# 天翼云盘（fmz200）
+# 天翼云盘(fmz200)
 # hostname = api.cloud.189.cn
 ^https?:\/\/api\.cloud\.189\.cn\/guns\/(img\/recommendedPosition|getOpenscreenBanners) reject-dict
 
+# ------------------------------------
+# 交管12123(广告必须死)
+# hostname = gab.122.gov.cn
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver reject-dict
+
 [Script]
 # ------------------------------------
-# 动画疯（fmz200）
-# (黑屏25秒)
+# 动画疯 黑屏25秒(fmz200)
 http-response ^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\? script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true, timeout=60, tag=动画疯, enable={dshxfg_enable}
 
 # ------------------------------------
-# 喜马拉雅（fmz200）
+# 喜马拉雅(fmz200)
 # 首页顶部去除直播
 http-response ^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js, requires-body=true, timeout=60, tag=喜马拉雅首页顶部去除直播, enable={ximalaya_enable}
 # 屏蔽首页横幅_Ad
@@ -155,4 +187,4 @@ http-response ^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category scri
 http-response ^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js, requires-body=true, timeout=60, tag=喜马拉雅去除我的页面Ad_Tag, enable={ximalaya_enable}
 
 [MITM]
-hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com, *.xima*.*.com, *.xmcdn.*, client.app.coc.10086.cn, app.10086.cn, mcmm.caiyun.feixin.10086.cn, mrp.mcloud.139.com, ad.mcloud.139.com, middle.yun.139.com, cloud.189.cn, zt-app.go189.cn, api.cloud.189.cn
+hostname = api.gamer.com.tw, daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn, cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com, *.xima*.*.com, *.xmcdn.*, client.app.coc.10086.cn, app.10086.cn, mcmm.caiyun.feixin.10086.cn, mrp.mcloud.139.com, ad.mcloud.139.com, middle.yun.139.com, cloud.189.cn, zt-app.go189.cn, api.cloud.189.cn, gab.122.gov.cn
