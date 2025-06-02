@@ -5,7 +5,6 @@
 #!icon = https://raw.githubusercontent.com/Kabiso413/VPN_Tool/refs/heads/main/Surge/Icon/Limbo.png
 #!date = 2025-04-21
 
-
 [URL Rewrite]
 ^https?:\/\/www\.novel543\.com\/log\/ad\.html - reject
 ^https?:\/\/stat\.gn01\.top\/js\/script\.js - reject
