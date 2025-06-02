@@ -1,9 +1,9 @@
-#!name=Emby解锁
-#!desc=解锁内购功能，Emby服分流。
-#!author=Tartarus2014[https://github.com/Tartarus2014]
-#!icon=https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/EMBY.png
-#!tag=解锁会员
-#!date=2025-06-03
+#!name = Emby解锁
+#!desc = 解锁内购功能，Emby服分流。
+#!author = Tartarus2014[https://github.com/Tartarus2014]
+#!icon = https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/EMBY.png
+#!tag = 解锁会员
+#!date = 2025-06-03
 
 [Rule]
 # 直连规则
