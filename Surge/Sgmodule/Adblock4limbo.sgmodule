@@ -7,7 +7,6 @@
 
 
 [URL Rewrite]
-
 ^https?:\/\/www\.novel543\.com\/log\/ad\.html - reject
 ^https?:\/\/stat\.gn01\.top\/js\/script\.js - reject
 ^https?:\/\/adc\.tamedia\.com\.tw\/rmadp/static/js/gm-sdk8-mobile\.js - reject
