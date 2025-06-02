@@ -3,7 +3,6 @@
 #!category = 广告过滤
 #!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], ddgksf2013[https://github.com/ddgksf2013]
 
-
 [Rule]
 # 友盟
 DOMAIN,cnlogs.umeng.com,REJECT
