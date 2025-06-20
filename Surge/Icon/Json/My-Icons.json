@@ -261,6 +261,10 @@
         {
             "name": "CHJC",
             "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/CHJC.png"
+        },
+        {
+            "name": "AECC",
+            "url": "https://raw.githubusercontent.com/Kabiso413/VPN_Tool/main/Surge/Icon/AECC.png"
         }
     ]
 }
