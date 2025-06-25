@@ -12,6 +12,7 @@ DOMAIN,anycast.media.cloudaria.net,超低倍率
 # ------------------------------------
 # SNTP
 DOMAIN,emby.cn2gias.uk,超低倍率
+DOMAIN,emby01.cn2gias.uk,超低倍率
 
 [Script]
 Emby = type=http-response, pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, requires-body=true, max-size=0
