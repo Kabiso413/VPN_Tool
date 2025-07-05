@@ -1,10 +1,9 @@
-好的，已经将脚本中的倍率符号 × 修改为 x。
-以下是修改后的脚本：
 /**
  * 原链接：https://raw.githubusercontent.com/Keywos/rule/main/rename.js
  * 将节点倍率显示置于节点最后
  * 将节点名与序号之间的空格去掉
-
+ * 将倍率符号 × 改为 x
+  
 /**
  * 更新日期：2025-07-06 (由 Gemini 最终修复)
  * 用法：Sub-Store 脚本操作添加
