@@ -3,7 +3,9 @@
  * 将节点倍率显示置于节点最后
  * 将节点名与序号之间的空格去掉
  * 将倍率符号 × 改为 x
-  
+ * 处理倍率中的浮点数，将 2.00 修正为 2，0.20 修正为 0.2
+ */
+
 /**
  * 更新日期：2025-07-06 (由 Gemini 最终修复)
  * 用法：Sub-Store 脚本操作添加
@@ -138,10 +140,11 @@ const rurekey = {
   Esnc: /esnc/gi,
 };
 
-let GetK = false, AMK = []
+let GetK = false,
+  AMK = [];
 function ObjKA(i) {
-  GetK = true
-  AMK = Object.entries(i)
+  GetK = true;
+  AMK = Object.entries(i);
 }
 
 function operator(pro) {
@@ -176,33 +179,35 @@ function operator(pro) {
   const BLKEYS = BLKEY ? BLKEY.split("+") : "";
 
   pro.forEach((e) => {
-    let bktf = false, ens = e.name
+    let bktf = false,
+      ens = e.name;
     // 预处理 防止预判或遗漏
     Object.keys(rurekey).forEach((ikey) => {
       if (rurekey[ikey].test(e.name)) {
         e.name = e.name.replace(rurekey[ikey], ikey);
-      if (BLKEY) {
-        bktf = true
-        let BLKEY_REPLACE = "",
-        re = false;
-      BLKEYS.forEach((i) => {
-        if (i.includes(">") && ens.includes(i.split(">")[0])) {
-          if (rurekey[ikey].test(i.split(">")[0])) {
-              e.name += " " + i.split(">")[0]
+        if (BLKEY) {
+          bktf = true;
+          let BLKEY_REPLACE = "",
+            re = false;
+          BLKEYS.forEach((i) => {
+            if (i.includes(">") && ens.includes(i.split(">")[0])) {
+              if (rurekey[ikey].test(i.split(">")[0])) {
+                e.name += " " + i.split(">")[0];
+              }
+              if (i.split(">")[1]) {
+                BLKEY_REPLACE = i.split(">")[1];
+                re = true;
+              }
+            } else {
+              if (ens.includes(i)) {
+                e.name += " " + i;
+              }
             }
-          if (i.split(">")[1]) {
-            BLKEY_REPLACE = i.split(">")[1];
-            re = true;
-          }
-        } else {
-          if (ens.includes(i)) {
-             e.name += " " + i
-            }
+            retainKey = re
+              ? BLKEY_REPLACE
+              : BLKEYS.filter((items) => e.name.includes(items));
+          });
         }
-        retainKey = re
-        ? BLKEY_REPLACE
-        : BLKEYS.filter((items) => e.name.includes(items));
-      });}
       }
     });
     if (blockquic == "on") {
@@ -247,24 +252,23 @@ function operator(pro) {
         /((倍率|X|x)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x)/
       );
       if (match) {
-        const rev = match[0].match(/(\d[\d.]*)/)[0];
+        // [修改] 将 "2.00" 转为 "2", "0.20" 转为 "0.2"
+        let rev = match[0].match(/(\d[\d.]*)/)[0];
+        rev = String(parseFloat(rev));
         if (rev !== "1") {
           const newValue = rev + "x";
           ikey = newValue;
         }
       }
     }
-    
-    // 将匹配到的倍率信息暂存到 e.rateSuffix 属性中
-    e.rateSuffix = [ikey, ikeys].filter(k => k !== "").join(FGF);
 
+    // [修改] 将匹配到的倍率信息暂存到 e.rateSuffix 属性中，以便后续追加到末尾
+    e.rateSuffix = [ikey, ikeys].filter((k) => k !== "").join(FGF);
 
-    !GetK && ObjKA(Allmap)
+    !GetK && ObjKA(Allmap);
     // 匹配 Allkey 地区
-    const findKey = AMK.find(([key]) =>
-      e.name.includes(key)
-    )
-    
+    const findKey = AMK.find(([key]) => e.name.includes(key));
+
     let firstName = "",
       nNames = "";
 
@@ -284,7 +288,7 @@ function operator(pro) {
           usflag = usflag === "🇹🇼" ? "🇨🇳" : usflag;
         }
       }
-      // 移除ikey, ikeys, 不在这一步拼接倍率
+      // [修改] 移除ikey, ikeys, 不在这一步拼接倍率
       keyover = keyover
         .concat(firstName, usflag, nNames, findKeyValue, retainKey)
         .filter((k) => k !== "");
@@ -298,19 +302,19 @@ function operator(pro) {
     }
   });
   pro = pro.filter((e) => e.name !== null);
-  
+
   // 核心命名和编号
   jxh(pro);
   numone && oneP(pro);
-  
-  // 在编号完成后，将暂存的倍率信息追加到名字末尾
-  pro.forEach(e => {
+
+  // [修改] 在编号完成后，将暂存的倍率信息追加到名字末尾
+  pro.forEach((e) => {
     if (e.rateSuffix && e.rateSuffix.length > 0) {
       e.name = e.name + FGF + e.rateSuffix;
       delete e.rateSuffix; // 清理临时属性
     }
   });
-  
+
   // 排序与最终过滤
   blpx && (pro = fampx(pro));
   key && (pro = pro.filter((e) => !keyb.test(e.name)));
