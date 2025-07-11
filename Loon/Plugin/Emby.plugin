@@ -19,6 +19,7 @@ DOMAIN,emby01.cn2gias.uk,PROXY
 # ------------------------------------
 # Zn的影视库
 DOMAIN,emby.zn.al,PROXY
+DOMAIN,emby1.zn.al,PROXY
 DOMAIN,emby.8897122.xyz,PROXY
 
 [Script]
