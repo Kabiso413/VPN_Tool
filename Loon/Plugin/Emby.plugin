@@ -3,7 +3,7 @@
 #!author = Tartarus2014[https://github.com/Tartarus2014]
 #!icon = https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/EMBY.png
 #!tag = 解锁会员
-#!date = 2025-07-10
+#!date = 2025-07-11
 
 [Rule]
 # ------------------------------------
@@ -18,8 +18,8 @@ DOMAIN,emby01.cn2gias.uk,PROXY
 
 # ------------------------------------
 # Zn的影视库
+DOMAIN,emby1.zn.al,DIRECT
 DOMAIN,emby.zn.al,PROXY
-DOMAIN,emby1.zn.al,PROXY
 DOMAIN,emby.8897122.xyz,PROXY
 
 [Script]
