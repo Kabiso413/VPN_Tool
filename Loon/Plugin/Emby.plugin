@@ -21,6 +21,7 @@ DOMAIN,emby.cn2gias.uk,PROXY
 DOMAIN,emby.zn.al,DIRECT
 DOMAIN,emby1.zn.al,DIRECT
 DOMAIN,emby.8897122.xyz,DIRECT
+DOMAIN-SUFFIX,8897122.xyz,DIRECT
 
 [Script]
 http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=1,max-size=0, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, tag=Emby
