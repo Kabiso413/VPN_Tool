@@ -13,14 +13,14 @@ DOMAIN,anycast.media.cloudaria.net,PROXY
 
 # ------------------------------------
 # SNTP
+DOMAIN,emby01.cn2gias.uk,DIRECT
 DOMAIN,emby.cn2gias.uk,PROXY
-DOMAIN,emby01.cn2gias.uk,PROXY
 
 # ------------------------------------
 # Zn的影视库
+DOMAIN,emby.zn.al,DIRECT
 DOMAIN,emby1.zn.al,DIRECT
-DOMAIN,emby.zn.al,PROXY
-DOMAIN,emby.8897122.xyz,PROXY
+DOMAIN,emby.8897122.xyz,DIRECT
 
 [Script]
 http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=1,max-size=0, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, tag=Emby
