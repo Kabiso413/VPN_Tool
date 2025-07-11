@@ -11,14 +11,14 @@ DOMAIN,anycast.media.cloudaria.net,超低倍率
 
 # ------------------------------------
 # SNTP
+DOMAIN,emby01.cn2gias.uk,DIRECT
 DOMAIN,emby.cn2gias.uk,超低倍率
-DOMAIN,emby01.cn2gias.uk,超低倍率
 
 # ------------------------------------
 # Zn的影视库
+DOMAIN,emby.zn.al,DIRECT
 DOMAIN,emby1.zn.al,DIRECT
-DOMAIN,emby.zn.al,超低倍率
-DOMAIN,emby.8897122.xyz,超低倍率
+DOMAIN,emby.8897122.xyz,DIRECT
 
 [Script]
 Emby = type=http-response, pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, requires-body=true, max-size=0
