@@ -1,0 +1,11 @@
+#!name=广告过滤补充
+#!desc=对去广告模块查缺补漏，增强去广告效果。
+
+[Rule]
+# 农行防代理检测 @广告必须死
+DOMAIN,msmp.abchina.com.cn,REJECT
+
+[Body Rewrite]
+# 去除喜马拉雅顶部视频Tab @可莉
+# 补全墨鱼喜马拉雅去广告
+http-response-jq ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? 'delpaths([["json","ad"]])'
