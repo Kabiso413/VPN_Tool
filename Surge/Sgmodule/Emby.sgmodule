@@ -5,6 +5,10 @@
 
 [Rule]
 # ---------------------------------
+# SenPlayer字幕搜索
+DOMAIN,api.assrt.net,全球手动
+
+# ---------------------------------
 # SNTP机场服
 DOMAIN,emby.cn2gias.uk,{{{PROXY}}}
 DOMAIN,emby01.cn2gias.uk,DIRECT
