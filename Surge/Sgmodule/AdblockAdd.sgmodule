@@ -1,6 +1,11 @@
 #!name=广告过滤补充
 #!desc=对去广告模块查缺补漏，增强去广告效果。
 
+[Rule]
+# 淘宝，切屏放置后台一段时间跳开屏解决方案 @广告必须死
+DOMAIN,heic.alicdn.com,REJECT
+DOMAIN-SUFFIX,h-adashx.ut.taobao.com,REJECT
+
 [Body Rewrite]
 # 去除喜马拉雅顶部视频Tab @可莉
 # 补全墨鱼喜马拉雅去广告
