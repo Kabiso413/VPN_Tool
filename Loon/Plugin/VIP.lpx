@@ -1,0 +1,136 @@
+#!name = 会员合集
+#!desc = 解锁应用会员功能，收集于网络。
+#!author = Tartarus2014[https://github.com/Tartarus2014], WeiGiegie[https://t.me/GieGie777], Yu9191[https://github.com/Yu9191], ddgksf2013[https://github.com/ddgksf2013], chxm1023[https://github.com/chxm1023], Guding88[https://github.com/Guding88]
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Puzzle.png
+#!tag = 解锁会员
+#!date = 2025-11-23
+
+[Rule]
+# SNTP机场服
+DOMAIN,emby.cn2gias.uk,PROXY
+DOMAIN,emby01.cn2gias.uk,Direct
+
+[Rewrite]
+# 芒果TV
+^https?://mobile.da.mgtv.com\/m\/page - reject
+
+# 咪咕视频
+^https://.*miguvideo\.com/request/sdk - reject-200
+^https://common-sc\.miguvideo\.com/task/v7/task-list/cmvideo/visitor - reject-200
+
+# 酷我音乐
+^.*?(ad(.*)?\.tencentmusic\.com|kuwo\.cn\/((EcomResource|(Mobile)?Ad)Serv(er|ice)|(vip|(open)?api)?\/(setting\/sidebar\/menus|v\d\/(operate\/((adVip\/)?text|pop\/info)|online\/homepage\/homepageBanner|user\/freeMode|album\/adBar|app\/(newMenuList\/menuListInfo|pasterAdvert\/config)))|kuwopay\/vip-tab\/page\/floatbox|commercia\/eproxy\/boot\/recommend\/fee\/config)) - reject-200
+
+# 波点音乐
+^https?:\/\/tmeadcomm.y.qq.com\/ - reject-200
+
+# Revenuecat-Yu9191
+https://api.lianjiu.fun/app/api/v1/profile - reject
+
+[Argument]
+EmbyScriptEnable = switch, true, false, tag = Emby, desc = Emby-脚本开关
+AppRavenScriptEnable = switch, true, false, tag = AppRaven, desc = AppRaven-脚本开关
+mgtvScriptEnable = switch, true, false, tag = 芒果TV, desc = 芒果TV-脚本开关
+miguvideoScriptEnable = switch, true, false, tag = 咪咕视频, desc = 咪咕视频-脚本开关
+kuwoScriptEnable = switch, true, false, tag = 酷我音乐, desc = 酷我音乐-脚本开关
+bodianScriptEnable = switch, true, false, tag = 波点音乐, desc = 波点音乐-脚本开关
+123panScriptEnable = switch, true, false, tag = 123盘, desc = 123盘-脚本开关
+RevenueCatScriptEnable-Yu9191 = switch, true, false, tag = Revenuecat-Yu9191, desc = Revenuecat-Yu9191-脚本开关
+RevenueCatScriptEnable-ddgksf2013 = switch, true, false, tag = Revenuecat-ddgksf2013, desc = Revenuecat-ddgksf2013-脚本开关
+RevenueCatScriptEnable-chxm1023 = switch, true, false, tag = Revenuecat-chxm1023, desc = Revenuecat-chxm1023-脚本开关
+RevenueCatScriptEnable-Guding88 = switch, true, false, tag = Revenuecat-Guding88, desc = Revenuecat-Guding88-脚本开关
+iTunesScriptEnable-ddgksf2013 = switch, true, false, tag = iTunes-ddgksf2013, desc = iTunes-ddgksf2013-脚本开关
+iTunesScriptEnable-chxm1023 = switch, true, false, tag = iTunes-chxm1023, desc = iTunes-chxm1023-脚本开关
+iTunesScriptEnable-Guding88 = switch, true, false, tag = iTunes-Guding88, desc = iTunes-Guding88-脚本开关
+
+[Script]
+# Emby
+# hostname = mb3admin.com
+http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, tag=Emby, enable={EmbyScriptEnable}
+
+# AppRaven
+# hostname = appraven.net
+http-response https://appraven.net/appraven/graphql script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/AppRaven.js, requires-body=true, timeout=60, tag=AppRaven, enable={AppRavenScriptEnable}
+
+# 芒果TV
+# hostname = *mgtv.com
+http-response ^https?:\/\/.*mgtv.com.*(GetUserInfo|module\/list\?_support|app\/bdboot|pullReleaseInfo|floor\/detail|video\/source|entry\?_support).*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/mgtv.js, requires-body=true, timeout=60, tag=芒果TV, enable={mgtvScriptEnable}
+
+# 芒果TV
+# hostname = *mgtv.com
+http-request ^https?:\/\/mobile-stream\.api\.mgtv\.com\/v1\/video\/source\? script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/mgtk.js, timeout=60, tag=芒果TV, enable={mgtvScriptEnable}
+
+# 咪咕视频
+# hostname = *.miguvideo.com
+http-response ^https?:\/\/(play|dis).*miguvideo.com\/(play|dis)(url|play)\/.*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/mgsp.js, requires-body=true, timeout=60, tag=咪咕视频, enable={miguvideoScriptEnable}
+
+# 咪咕视频
+# hostname = *.miguvideo.com
+http-request ^https?:\/\/play.miguvideo.com\/playurl\/v1\/play\/playurl\?2Kvivid=true?.*=true$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/mgspck.js, timeout=60, tag=咪咕视频, enable={miguvideoScriptEnable}
+
+# 酷我音乐
+# hostname = *.kuwo.cn, abt-kuwo.tencentmusic.com, ad.tencentmusic.com:443
+http-response ^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu|anymatch|mobilebasedata|rich|mobilead|wapi)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info|api\/music\/info|AdService\/kaiping\/adinfo|EcomResourceServer\/(?:adEarnGuajian\/adinfo|getMotor\.do)|openapi\/v1\/(?:operate\/homePage|user\/freeMode\/h5\/text|operate\/message\/info|user\/dolby\/text)|commercia\/(?:vipTab\/myTab\/base|userAssets\/downloadCoupon\/reduce|recall\/pop\/jxhGearInfo|vip\/(?:dressCenter\/getResourceList|player\/getStyleListByModel))|api\/v2\/pay\/app\/getConfigInfo(?:\?configType)?|vip\/v2\/sysinfo|commercia\/recall\/pop\/jxhMultiGearInfo) script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/kuwo.js, requires-body=true, timeout=60, tag=酷我音乐, enable={kuwoScriptEnable}
+
+# 酷我音乐
+# hostname = *.kuwo.cn, abt-kuwo.tencentmusic.com, ad.tencentmusic.com:443
+http-request ^https?:\/\/vip1\.kuwo\.cn\/commercia\/vip\/player\/getStyleListByModel script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/kuwo.js, timeout=60, tag=酷我音乐, enable={kuwoScriptEnable}
+
+# 波点音乐
+# hostname = tmeadcomm.y.qq.com, bd-api.kuwo.cn, *.kuwo.*, ad.tencentmusic.com, *.l.qq.com, 39.156.123.46:443, bd-api.kuwo.com, 39.156.123.46, 39.156.12*.*:443, h5app.kuwo.cn, bodianimgcdn.kuwo.cn, h5s.kuwo.cn, 39.156.121.20:443, 111.30.171.170:443, 39.156.121.21:443, 101.42.133.54:443, ab-bodian.kuwo.cn, 39.156.121.65:443, 39.156.121.*:443, bd-api.kuwo.cn:443, ab-bodian.kuwo.cn:443, 39.156.121.60:80, xs.gdt.qq.com
+http-response ^https?:\/\/(?:(?:bd-api|h5app|bodianyin|ab-bodian)\.kuwo\.cn\/(?:api\/(?:ucenter\/users\/(?:pub|login)|play\/(?:music\/v2\/(?:audioUrl|checkRight)|advert\/info)|service\/(?:music\/(?:info|download\/(?:info|config))|home\/module|global\/config\/(?:scene|vipEnter)|banner\/positions|advert\/config)|search\/topic\/word\/list|pay\/(?:vip\/(?:invitation\/(?:assist\/popup|swell)|lowPriceText)|sp\/actVip|audition\/url)|advert\/free\/config|popup\/start\/info|abtest\/ui\/info|rec\/feed)|abtest\/ui\/info)|us\.l\.qq\.com\/exapp|xs\.gdt\.qq\.com\/style_factory\/template_list) script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js, requires-body=true, timeout=60, tag=波点音乐, enable={bodianScriptEnable}
+
+# 123盘
+# hostname = www.123pan.com
+http-response ^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, requires-body=true, timeout=60, tag=123pan.Ads, enable={123panScriptEnable}
+
+# 123盘
+# hostname = www.123pan.com
+http-request ^https?:\/\/www\.123pan\.com\/b\/api\/share\/download\/info script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, timeout=60, tag=123pan.Enhance, enable={123panScriptEnable}
+
+# Revenuecat-Yu9191
+# hostname = api.lianjiu.fun, api.revenuecat.com
+http-response ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, timeout=60, tag=Revenuecat-Yu9191, enable={RevenueCatScriptEnable-Yu9191}
+
+# Revenuecat-Yu9191
+# hostname = api.revenuecat.com, api.lianjiu.fun
+http-request ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, timeout=60, tag=Revenuecat-Yu9191, enable={RevenueCatScriptEnable-Yu9191}
+
+# Revenuecat-ddgksf2013
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, requires-body=true, timeout=60, tag=Revenuecat-ddgksf2013, enable={RevenueCatScriptEnable-ddgksf2013}
+
+# Revenuecat-ddgksf2013
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60, tag=Revenuecat-ddgksf2013, enable={RevenueCatScriptEnable-ddgksf2013}
+
+# Revenuecat-chxm1023
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, timeout=60, tag=Revenuecat-chxm1023, enable={RevenueCatScriptEnable-chxm1023}
+
+# Revenuecat-chxm1023
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60, tag=Revenuecat-chxm1023, enable={RevenueCatScriptEnable-chxm1023}
+
+# Revenuecat-Guding88
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-response ^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js, requires-body=true, tag=Revenuecat-Guding88, enable={RevenueCatScriptEnable-Guding88}
+
+# Revenuecat-Guding88
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-request ^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js, tag=Revenuecat-Guding88, enable={RevenueCatScriptEnable-Guding88}
+
+# iTunes-ddgksf2013
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js, requires-body=true, timeout=60, tag=iTunes-ddgksf2013, enable={iTunesScriptEnable-ddgksf2013}
+
+# iTunes-chxm1023
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, timeout=60, tag=iTunes-chxm1023, enable={iTunesScriptEnable-chxm1023}
+
+# iTunes-Guding88
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_iTunes.js, requires-body=true, tag=iTunes-Guding88, enable={iTunesScriptEnable-Guding88}
+
+[MITM]
+hostname = mb3admin.com, appraven.net, tmeadcomm.y.qq.com, bd-api.kuwo.cn, *.kuwo.*, ad.tencentmusic.com, *.l.qq.com, 39.156.123.46:443, bd-api.kuwo.com, 39.156.123.46, 39.156.12*.*:443, h5app.kuwo.cn, bodianimgcdn.kuwo.cn, h5s.kuwo.cn, 39.156.121.20:443, 111.30.171.170:443, 39.156.121.21:443, 101.42.133.54:443, ab-bodian.kuwo.cn, 39.156.121.65:443, 39.156.121.*:443, bd-api.kuwo.cn:443, ab-bodian.kuwo.cn:443, 39.156.121.60:80, xs.gdt.qq.com, *.kuwo.cn, abt-kuwo.tencentmusic.com, ad.tencentmusic.com:443, *mgtv.com, *.miguvideo.com, www.123pan.com, api.lianjiu.fun, api.revenuecat.com, api.rc-backup.com, buy.itunes.apple.com
