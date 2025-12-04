@@ -3,7 +3,7 @@
 #!author = Tartarus2014[https://github.com/Tartarus2014], WeiGiegie[https://t.me/GieGie777], Yu9191[https://github.com/Yu9191], ddgksf2013[https://github.com/ddgksf2013], chxm1023[https://github.com/chxm1023], Guding88[https://github.com/Guding88]
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Puzzle.png
 #!tag = 解锁会员
-#!date = 2025-11-23
+#!date = 2025-12-04
 
 [Rule]
 # SNTP机场服
@@ -98,7 +98,7 @@ http-request ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipt
 
 # Revenuecat-ddgksf2013
 # hostname = api.revenuecat.com, api.rc-backup.com
-http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, requires-body=true, timeout=60, tag=Revenuecat-ddgksf2013, enable={RevenueCatScriptEnable-ddgksf2013}
+http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://ddgksf2013.top/scripts/revenuecat.vip.js, requires-body=true, timeout=60, tag=Revenuecat-ddgksf2013, enable={RevenueCatScriptEnable-ddgksf2013}
 
 # Revenuecat-ddgksf2013
 # hostname = api.revenuecat.com, api.rc-backup.com
@@ -122,7 +122,7 @@ http-request ^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\
 
 # iTunes-ddgksf2013
 # hostname = buy.itunes.apple.com
-http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js, requires-body=true, timeout=60, tag=iTunes-ddgksf2013, enable={iTunesScriptEnable-ddgksf2013}
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://ddgksf2013.top/scripts/buyitunes.vip.js, requires-body=true, timeout=60, tag=iTunes-ddgksf2013, enable={iTunesScriptEnable-ddgksf2013}
 
 # iTunes-chxm1023
 # hostname = buy.itunes.apple.com
