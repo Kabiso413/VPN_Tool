@@ -1,0 +1,17 @@
+#!name = 芒果TV
+#!desc = 解锁应用会员权限，App Store版本：9.1.0
+#!author = WeiGiegie[https://t.me/GieGie777]
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/refs/heads/main/App_icon/120px/Mango_TV.png
+#!tag = 解锁会员
+#!date = 2025-12-27
+
+[Rewrite]
+^https?://mobile.da.mgtv.com\/m\/page - reject
+
+[Script]
+http-response ^https?:\/\/.*mgtv.com.*(GetUserInfo|module\/list\?_support|app\/bdboot|pullReleaseInfo|floor\/detail|video\/source|entry\?_support).*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/mgtv.js, requires-body=true, timeout=60, tag=mgtv
+
+http-request ^https?:\/\/mobile-stream\.api\.mgtv\.com\/v1\/video\/source\? script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/mgtk.js, timeout=60, tag=mgtk
+
+[MITM]
+hostname = *mgtv.com
