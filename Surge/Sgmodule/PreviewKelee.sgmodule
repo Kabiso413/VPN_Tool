@@ -1,0 +1,10 @@
+#!name=预览Kelee资源
+#!desc=将Kelee资源链接复制到Safari打开即可预览
+
+[Header Rewrite]
+http-response ^https:\/\/(.*\.)?kelee\.one(\/.*)? header-add content-disposition inline
+http-response ^https:\/\/(.*\.)?kelee\.one(\/.*)? header-replace content-type "text/plain; charset=utf-8"
+http-request ^https:\/\/(.*\.)?kelee\.one(\/.*)? header-replace User-Agent "Surge iOS/9527"
+
+[MITM]
+hostname = %APPEND% -pluginhub.kelee.one, *.kelee.one, kelee.one

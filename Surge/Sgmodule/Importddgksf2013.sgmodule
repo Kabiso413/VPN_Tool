@@ -1,0 +1,8 @@
+#!name=导入ddgksf2013资源
+#!desc=需要搭配「Script Hub: 重写 & 规则集转换」模块使用
+
+[Script]
+OpenConverter = type=http-response, pattern=^https?:\/\/ddgksf2013.top\/$,requires-body=1,max-size=-1,script-path=https://ddgksf2013.top/scripts/web.surge.js, timeout=3500
+
+[MITM]
+hostname = %APPEND% ddgksf2013.top
