@@ -1,0 +1,12 @@
+#!name = 预览QuanX一键导入资源
+#!desc = 将QuanX的一键导入链接复制到Safari打开即可预览
+#!author = Tartarus2014[https://github.com/Tartarus2014]
+#!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/QuantumultX.png
+#!tag = 功能插件
+#!date = 2025-12-30
+
+[Script]
+http-request ^https:\/\/quantumult\.app\/x\/open-app\/add-resource\?remote-resource= script-path=https://github.com/chengkongyiban/shadowrocket/raw/main/scripts/qx-resource-preview.js, requires-body=true, timeout=60, tag=qx-resource-preview
+
+[MITM]
+hostname = quantumult.app

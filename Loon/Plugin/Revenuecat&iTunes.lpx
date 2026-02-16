@@ -1,0 +1,72 @@
+#!name = Revenuecat & iTunes
+#!desc = Revenuecat & iTunes 系列解锁合集
+#!author = Yu9191[https://github.com/Yu9191], chxm1023[https://github.com/chxm1023], Guding88[https://github.com/Guding88], ddgksf2013[https://github.com/ddgksf2013]
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Puzzle.png
+#!tag = 解锁会员
+#!date = 2025-12-30
+
+[Rewrite]
+# Revenuecat-Yu9191
+https://api.lianjiu.fun/app/api/v1/profile - reject
+
+[Argument]
+RevenueCatScriptEnable-Yu9191 = switch, true, false, tag = Revenuecat-Yu9191, desc = Revenuecat-Yu9191-脚本开关
+RevenueCatScriptEnable-chxm1023 = switch, true, false, tag = Revenuecat-chxm1023, desc = Revenuecat-chxm1023-脚本开关
+RevenueCatScriptEnable-Guding88 = switch, true, false, tag = Revenuecat-Guding88, desc = Revenuecat-Guding88-脚本开关
+RevenueCatScriptEnable-ddgksf2013 = switch, true, false, tag = Revenuecat-ddgksf2013, desc = Revenuecat-ddgksf2013-脚本开关
+iTunesScriptEnable-Yu9191 = switch, true, false, tag = iTunes-Yu9191, desc = iTunes-Yu9191-脚本开关
+iTunesScriptEnable-chxm1023 = switch, true, false, tag = iTunes-chxm1023, desc = iTunes-chxm1023-脚本开关
+iTunesScriptEnable-Guding88 = switch, true, false, tag = iTunes-Guding88, desc = iTunes-Guding88-脚本开关
+iTunesScriptEnable-ddgksf2013 = switch, true, false, tag = iTunes-ddgksf2013, desc = iTunes-ddgksf2013-脚本开关
+
+[Script]
+# Revenuecat-Yu9191
+# hostname = api.lianjiu.fun, api.revenuecat.com
+http-response ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, timeout=60, tag=Revenuecat-Yu9191, enable={RevenueCatScriptEnable-Yu9191}
+
+# Revenuecat-Yu9191
+# hostname = api.lianjiu.fun, api.revenuecat.com
+http-request ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, timeout=60, tag=Revenuecat-Yu9191, enable={RevenueCatScriptEnable-Yu9191}
+
+# Revenuecat-chxm1023
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, timeout=60, tag=Revenuecat-chxm1023, enable={RevenueCatScriptEnable-chxm1023}
+
+# Revenuecat-chxm1023
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60, tag=Revenuecat-chxm1023, enable={RevenueCatScriptEnable-chxm1023}
+
+# Revenuecat-Guding88
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-response ^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js, requires-body=true, tag=Revenuecat-Guding88, enable={RevenueCatScriptEnable-Guding88}
+
+# Revenuecat-Guding88
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-request ^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js, tag=Revenuecat-Guding88, enable={RevenueCatScriptEnable-Guding88}
+
+# Revenuecat-ddgksf2013
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://ddgksf2013.top/scripts/revenuecat.vip.js, requires-body=true, timeout=60, tag=Revenuecat-ddgksf2013, enable={RevenueCatScriptEnable-ddgksf2013}
+
+# Revenuecat-ddgksf2013
+# hostname = api.revenuecat.com, api.rc-backup.com
+http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60, tag=Revenuecat-ddgksf2013, enable={RevenueCatScriptEnable-ddgksf2013}
+
+# iTunes-Yu9191
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/iTunes.js, requires-body=true, timeout=60, tag=iTunes-Yu9191, enable={iTunesScriptEnable-Yu9191}
+
+# iTunes-chxm1023
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, timeout=60, tag=iTunes-chxm1023, enable={iTunesScriptEnable-chxm1023}
+
+# iTunes-Guding88
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_iTunes.js, requires-body=true, tag=iTunes-Guding88, enable={iTunesScriptEnable-Guding88}
+
+# iTunes-ddgksf2013
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://ddgksf2013.top/scripts/buyitunes.vip.js, requires-body=true, timeout=60, tag=iTunes-ddgksf2013, enable={iTunesScriptEnable-ddgksf2013}
+
+[MITM]
+hostname = api.lianjiu.fun, api.revenuecat.com, api.rc-backup.com, buy.itunes.apple.com

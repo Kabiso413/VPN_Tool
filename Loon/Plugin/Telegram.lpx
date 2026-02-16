@@ -1,0 +1,41 @@
+#!name = Telegram
+#!desc = Telegram外部链接跳转，以及将 TG 的垃圾 IP 转移到好的 IP 上
+#!author = sooyaaabo[https://github.com/sooyaaabo], Tartarus2014[https://github.com/Tartarus2014]
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/refs/heads/main/App_icon/120px/Telegram.png
+#!tag = 应用增强
+#!date = 2025-12-30
+
+[Rule]
+DOMAIN-SUFFIX, swiftgram.app, PROXY
+DOMAIN-SUFFIX, iturrit.com, PROXY
+DOMAIN-SUFFIX, imem.app, PROXY
+DOMAIN-SUFFIX, nicegram.app, PROXY
+DOMAIN-SUFFIX, nicegram.cloud, PROXY
+DOMAIN-SUFFIX, intentchat.app, PROXY
+
+[Host]
+91.108.56.100 = 91.108.56.147, use-in-proxy=true
+91.108.56.101 = 91.108.56.147, use-in-proxy=true
+91.108.56.104 = 91.108.56.147, use-in-proxy=true
+91.108.56.107 = 91.108.56.147, use-in-proxy=true
+91.108.56.109 = 91.108.56.147, use-in-proxy=true
+91.108.56.110 = 91.108.56.147, use-in-proxy=true
+91.108.56.113 = 91.108.56.147, use-in-proxy=true
+91.108.56.120 = 91.108.56.147, use-in-proxy=true
+91.108.56.125 = 91.108.56.147, use-in-proxy=true
+91.108.56.126 = 91.108.56.147, use-in-proxy=true
+91.108.56.128 = 91.108.56.147, use-in-proxy=true
+91.108.56.134 = 91.108.56.147, use-in-proxy=true
+91.108.56.138 = 91.108.56.147, use-in-proxy=true
+91.108.56.143 = 91.108.56.147, use-in-proxy=true
+91.108.56.145 = 91.108.56.147, use-in-proxy=true
+91.108.56.156 = 91.108.56.147, use-in-proxy=true
+
+[Argument]
+t.me_redirect = select, "Telegram", "Swiftgram", "Turrit", "iMe", "Nicegram", "Lingogram", tag = 跳转至对应客户端
+
+[Script]
+http-response (https:\/\/)?t\.me\/(.+) script-path = https://raw.githubusercontent.com/Kabiso413/VPN_Tool/refs/heads/main/Loon/Scripts/t.me_redirect.js, requires-body = false, tag = [Telegram]t.me重定向, argument=[{t.me_redirect}]
+
+[MitM]
+hostname = t.me
