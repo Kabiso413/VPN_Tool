@@ -10,7 +10,7 @@
 # 主线路：日美
 DOMAIN,server2.cn2gias.uk,PROXY
 # CF优选：直连
-DOMAIN,s2.array2026.cc,Direct
+DOMAIN,s2.array2026.cc,DIRECT
 
 [Script]
 http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, tag=EmbyUnlocked
