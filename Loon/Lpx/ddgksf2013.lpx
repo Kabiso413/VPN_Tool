@@ -1,0 +1,17 @@
+#!name = 墨鱼手记
+#!desc = Tab栏显示Loon，代表网页变身成功，即可一键添加插件
+#!author = ddgksf2013[https://github.com/ddgksf2013]
+#!icon = https://raw.githubusercontent.com/Kabiso413/VPN_Tool/refs/heads/main/Loon/Icon/Cuttlefish.png
+#!homepage = https://ddgksf2013.top
+#!openurl = https://ddgksf2013.top
+#!tag = 功能插件
+#!date = 2026-09-25
+
+[Rule]
+AND, ((DOMAIN-SUFFIX, ddgksf2013.top), (PROTOCOL, QUIC)), REJECT-NO-DROP
+
+[Script]
+response if ${url} ~= /^https?:\/\/ddgksf2013.top\/$/i then script("https://ddgksf2013.top/scripts/web.loon.js") with tag="网页变身", timeout=300
+
+[MITM]
+hostname = ddgksf2013.top

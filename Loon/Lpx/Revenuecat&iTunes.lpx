@@ -1,0 +1,54 @@
+#!name = Revenuecat & iTunes
+#!desc = Revenuecat & iTunes 系列解锁合集
+#!author = chxm1023[https://github.com/chxm1023], Guding88[https://github.com/Guding88], ddgksf2013[https://github.com/ddgksf2013]
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Puzzle.png
+#!tag = 解锁会员
+#!date = 2026-09-25
+
+[Argument]
+RevenueCatScriptEnable-chxm1023 = switch, true, false, tag = Revenuecat-chxm1023, desc = Revenuecat-chxm1023-脚本开关
+RevenueCatScriptEnable-Guding88 = switch, true, false, tag = Revenuecat-Guding88, desc = Revenuecat-Guding88-脚本开关
+RevenueCatScriptEnable-ddgksf2013 = switch, true, false, tag = Revenuecat-ddgksf2013, desc = Revenuecat-ddgksf2013-脚本开关
+iTunesScriptEnable-chxm1023 = switch, true, false, tag = iTunes-chxm1023, desc = iTunes-chxm1023-脚本开关
+iTunesScriptEnable-Guding88 = switch, true, false, tag = iTunes-Guding88, desc = iTunes-Guding88-脚本开关
+iTunesScriptEnable-ddgksf2013 = switch, true, false, tag = iTunes-ddgksf2013, desc = iTunes-ddgksf2013-脚本开关
+
+[Script]
+# Revenuecat-chxm1023
+# hostname = api.revenuecat.com, api.rc-backup.com
+response if ${url} ~= /^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)/i then script("https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js") with enable=${RevenueCatScriptEnable-chxm1023}, tag="Revenuecat-chxm1023", timeout=60, requires_body=true
+
+# Revenuecat-chxm1023
+# hostname = api.revenuecat.com, api.rc-backup.com
+request if ${url} ~= /^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)/i then script("https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js") with enable=${RevenueCatScriptEnable-chxm1023}, tag="Revenuecat-chxm1023", timeout=60
+
+# Revenuecat-Guding88
+# hostname = api.revenuecat.com, api.rc-backup.com
+response if ${url} ~= /^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$)/i then script("https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js") with enable=${RevenueCatScriptEnable-Guding88}, tag="Revenuecat-Guding88", requires_body=true
+
+# Revenuecat-Guding88
+# hostname = api.revenuecat.com, api.rc-backup.com
+request if ${url} ~= /^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$)/i then script("https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js") with enable=${RevenueCatScriptEnable-Guding88}, tag="Revenuecat-Guding88"
+
+# Revenuecat-ddgksf2013
+# hostname = api.revenuecat.com, api.rc-backup.com
+response if ${url} ~= /^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^\/]+$)/i then script("https://ddgksf2013.top/scripts/revenuecat.vip.js") with enable=${RevenueCatScriptEnable-ddgksf2013}, tag="Revenuecat-ddgksf2013", timeout=60, requires_body=true
+
+# Revenuecat-ddgksf2013
+# hostname = api.revenuecat.com, api.rc-backup.com
+request if ${url} ~= /^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers)/i then script("https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js") with enable=${RevenueCatScriptEnable-ddgksf2013}, tag="Revenuecat-ddgksf2013", timeout=60
+
+# iTunes-chxm1023
+# hostname = buy.itunes.apple.com
+response if ${url} ~= /^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$/i then script("https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js") with enable=${iTunesScriptEnable-chxm1023}, tag="iTunes-chxm1023", timeout=60, requires_body=true
+
+# iTunes-Guding88
+# hostname = buy.itunes.apple.com
+response if ${url} ~= /^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$/i then script("https://raw.githubusercontent.com/Guding88/Script/main/APPheji_iTunes.js") with enable=${iTunesScriptEnable-Guding88}, tag="iTunes-Guding88", requires_body=true
+
+# iTunes-ddgksf2013
+# hostname = buy.itunes.apple.com
+response if ${url} ~= /^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$/i then script("https://ddgksf2013.top/scripts/buyitunes.vip.js") with enable=${iTunesScriptEnable-ddgksf2013}, tag="iTunes-ddgksf2013", timeout=60, requires_body=true
+
+[MITM]
+hostname = api.revenuecat.com, api.rc-backup.com, buy.itunes.apple.com

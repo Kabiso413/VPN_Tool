@@ -1,0 +1,21 @@
+#!name = Emby
+#!desc = 解锁应用内购功能，Emby服务器分流。
+#!author = Tartarus2014[https://github.com/Tartarus2014]
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/refs/heads/main/App_icon/120px/Emby.png
+#!tag = 解锁会员
+#!date = 2026-09-25
+
+[Rule]
+# 守候网络|SNTP
+# 主线路：日美
+DOMAIN,std.cn2gias.uk,PROXY
+# CF优选：直连
+DOMAIN,s2.array2026.cc,DIRECT
+# CF优选：直连
+DOMAIN,s3.array2026.com,DIRECT
+
+[Script]
+response if ${url} ~= /^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice/i then script("https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js") with tag="EmbyUnlocked", requires_body=true
+
+[MITM]
+hostname = mb3admin.com
